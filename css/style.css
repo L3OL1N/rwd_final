@@ -181,7 +181,7 @@ footer a {
   display: block;
   width: 40%;
 }
-@media (max-width: 400px) {
+@media (max-width: 421px) {
   footer .toTop-arrow {
     margin-right: 40%;
   }
@@ -192,7 +192,7 @@ footer ul {
   justify-content: center;
   text-align: center;
 }
-@media (max-width: 400px) {
+@media (max-width: 421px) {
   footer ul {
     display: none;
   }
