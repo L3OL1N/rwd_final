@@ -1,0 +1,41 @@
+@import 'mixin';
+$width:40%;
+
+ /* footer */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $background-lightgreen;
+    padding: 5px;
+    a{
+        display: block;
+        width: $width;
+    }
+    .toTop-arrow{
+        @include mobile{
+            margin-right: $width;
+        }
+    }
+    ul{
+        width: $width;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        @include mobile{
+            display: none;
+        }
+        a{
+            display: block;
+            li:hover{
+                color:$color-orange;
+            }
+            li{
+                padding: 10px 0;
+                font-weight: bold;
+                color: $background-darkgreen;
+            }
+        }
+    }
+}

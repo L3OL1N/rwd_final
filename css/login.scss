@@ -1,0 +1,120 @@
+@import 'scss/mixin';
+
+$width:250px;
+
+ /* css */
+.active{
+    height: 105%;
+}
+.content{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black;
+    .banner{
+        max-width: 100%;
+        height: 200px;
+        background: repeating-linear-gradient(45deg,pink,pink 10px,red 10px,red 20px);
+        }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        gap: 30px;
+        background: #1d2b3a;
+        .input_box{
+            position: relative;
+            width: $width;
+            input{
+                width: 100%;
+                padding: 15px;
+                border: 1px solid $color-gray;
+                background: #1d2b3a;
+                border-radius: 5px;
+                outline: none;
+                color: #fff;
+                font-size: 1em;
+                transition: 0.5s;
+                &:focus:invalid{
+                    border: 1px solid $color-red;
+                    ~span{
+                        background: $color-red;
+                        border-left: 1px solid $color-red;
+                        border-right: 1px solid $color-red;
+                    }
+                }
+                &:not(:placeholder-shown):invalid{
+                    border: 1px solid $color-red;
+                }
+                &:valid ,
+                &:focus 
+                {
+                border: 1px solid $color-greenblue;
+            }
+            }
+            span{
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 15px;
+                pointer-events: none;
+                font-size: 1em;
+                color: transparent;
+                text-transform: uppercase;
+                transition: 0.5s;
+                &.active{
+                    height: 1em;
+                    color: $color-greenblue;
+                    transform: translateX(8px) translateY(-7px);
+                    font-size: 0.7em;
+                    padding: 2px 10px;
+                    background: #1d2b3a;
+                    border-left: 1px solid $color-greenblue;
+                    border-right: 1px solid $color-greenblue;
+                    letter-spacing: 0.1em;
+                    background: $color-greenblue;
+                    color: #1d2b3a;
+                    border-radius: 2px;
+                }
+            }
+            
+        }
+        a{
+            width: 250px;
+            color:$color-red;
+            margin-left: 2.5em;
+            margin-bottom: -30px;
+            
+            &:hover{
+                color: $color-greenblue;
+            }
+        }
+        .box{
+            width: $width;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            *{
+                display: block;
+            }
+            a{
+                color:$color-gray ;
+                margin-left: 20px;
+                &:hover{
+                    color: $color-greenblue;
+                }
+            }
+            input[type=submit]{
+                background: $color-greenblue;
+                border: none;
+                outline: none;
+                padding: 10px;
+                border-radius: 2px;
+                &:hover{
+                    filter: hue-rotate(30deg);
+                }
+            }
+        }
+    }
+}

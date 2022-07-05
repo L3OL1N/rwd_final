@@ -1,0 +1,142 @@
+/* css */
+.content {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+.content .banner {
+  grid-area: banner;
+  max-width: 100%;
+  height: 400px;
+  background: repeating-linear-gradient(45deg, pink, pink 10px, red 10px, red 20px);
+  background: url("https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80");
+  background-position: bottom;
+  background-position-y: 71%;
+}
+@media (max-width: 400px) {
+  .content .banner {
+    height: 200px;
+    background-position-y: 60%;
+    background-size: 100%;
+  }
+}
+.content main {
+  display: grid;
+  grid-template-areas: "form form" "info map";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  background: linear-gradient(#00694a, #02bd88);
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .content main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.content .form {
+  max-width: 100%;
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .form h3 {
+  font-size: 26px;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.content .form form {
+  display: flex;
+}
+@media (max-width: 400px) {
+  .content .form form {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.content .form textarea {
+  height: 250px;
+  width: 45%;
+  border-radius: 5px;
+  resize: none;
+  text-indent: 0.5em;
+}
+@media (max-width: 400px) {
+  .content .form textarea {
+    width: 100%;
+    height: 200px;
+  }
+}
+.content .form .form_text {
+  width: 45%;
+  margin-left: 50px;
+}
+@media (max-width: 400px) {
+  .content .form .form_text {
+    width: 100%;
+    margin: 10px;
+  }
+}
+.content .form label {
+  cursor: pointer;
+}
+.content .form label, .content .form input {
+  display: block;
+  width: 95%;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: 150px;
+}
+.content .form input {
+  color: #7d7d7d;
+  height: 34px;
+  border-radius: 5px;
+  border: 0;
+  padding-left: 5px;
+}
+.content .form input:focus {
+  color: black;
+  font-size: 17px;
+}
+.content .form .button {
+  height: 33px;
+  width: 71px;
+  color: #ffffff;
+  background: #00cc98;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 70%;
+  cursor: pointer;
+}
+.content .form .button:hover {
+  box-shadow: 1px 1px 1px 1px gray;
+  font-weight: bold;
+  background: #19e4b1;
+}
+.content .info {
+  grid-area: info;
+  justify-self: center;
+  align-self: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.content .info p {
+  margin-bottom: 20px;
+}
+.content .info p a {
+  text-decoration: none;
+}
+.content iframe {
+  grid-area: map;
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+}/*# sourceMappingURL=contact.css.map */

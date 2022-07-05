@@ -1,0 +1,419 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* css resst End */
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d7ee9d;
+  padding: 20px 10px 0 10px;
+}
+header ul {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-template-rows: 0.3fr 1fr;
+  justify-content: space-around;
+  align-content: space-between;
+  gap: 10px;
+}
+header ul a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  grid-row: 2/3;
+  padding: 10px;
+  margin-top: 10px;
+  background: white;
+  border: 1px solid black;
+  border-bottom: transparent;
+  text-align: center;
+  color: #000;
+  background: white;
+  font-weight: bold;
+}
+header ul a:hover {
+  grid-row: 1/3;
+}
+header ul a:hover ::before {
+  content: " ";
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  width: 100%;
+  height: 4px;
+  background: #aec378;
+  border: 1px solid #aec378;
+}
+header ul a.active {
+  position: relative;
+  grid-row: 1/3;
+}
+header ul a.active ::before {
+  content: " ";
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  width: 100%;
+  height: 4px;
+  background: red;
+  border: 1px solid red;
+}
+header .login {
+  grid-template-columns: 1fr 1fr;
+}
+header .hamburger {
+  display: none;
+}
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+    position: relative;
+  }
+  header .hamburger {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+  }
+  header ul {
+    display: block;
+    max-width: 0px;
+    position: absolute;
+    overflow: hidden;
+    top: 81px;
+    right: 10px;
+    transition: max-width 3s;
+    z-index: 4;
+  }
+  header ul.menu {
+    right: 20px;
+  }
+  header ul li {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  header .show {
+    max-width: 100%;
+    right: 10px;
+  }
+  header .login {
+    display: flex;
+    top: 290px;
+  }
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d7ee9d;
+  padding: 5px;
+}
+footer a {
+  display: block;
+  width: 40%;
+}
+@media (max-width: 400px) {
+  footer .toTop-arrow {
+    margin-right: 40%;
+  }
+}
+footer ul {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+@media (max-width: 400px) {
+  footer ul {
+    display: none;
+  }
+}
+footer ul a {
+  display: block;
+}
+footer ul a li:hover {
+  color: #f90;
+}
+footer ul a li {
+  padding: 10px 0;
+  font-weight: bold;
+  color: #aec378;
+}
+
+/* toTopAorrw */
+.toTop-arrow {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 33%;
+  position: relative;
+}
+.toTop-arrow::before, .toTop-arrow::after {
+  width: 25px;
+  height: 5px;
+  border-radius: 3px;
+  background: #aec378;
+  position: absolute;
+  content: " ";
+  bottom: 1.25rem;
+}
+.toTop-arrow:hover::before, .toTop-arrow:hover::after {
+  content: " ";
+  background: #f90;
+}
+.toTop-arrow::before {
+  transform: rotate(-45deg) translate(0, -50%);
+  left: 0.4rem;
+}
+.toTop-arrow::after {
+  transform: rotate(45deg) translate(0, -50%);
+  right: 0.4rem;
+}
+
+.content {
+  max-width: 100%;
+  border: 1px solid black;
+}
+.content .banner {
+  max-width: 100%;
+  height: 400px;
+  background: repeating-linear-gradient(45deg, black, black 10px, yellow 10px, yellow 20px);
+  background: url("https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-position: bottom;
+}
+@media (max-width: 400px) {
+  .content .banner {
+    height: 200px;
+    background-position-y: 95%;
+    background-size: 180%;
+  }
+}
+.content main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.content main h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px;
+  position: relative;
+}
+.content main h2::before, .content main h2::after {
+  content: " ";
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  background: #000;
+  top: 50%;
+}
+.content main h2::before {
+  left: -54px;
+}
+.content main h2::after {
+  right: -54px;
+}
+.content main h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.content main .secret {
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+@media (max-width: 400px) {
+  .content main .secret {
+    flex-direction: column;
+  }
+}
+.content main .secret img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  margin: 10px;
+}
+@media (max-width: 400px) {
+  .content main .secret img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.content main .secret p {
+  width: 90%;
+  font: 18px;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+@media (max-width: 400px) {
+  .content main .secret p {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+.content main .banner_2 {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "img h3" "img p";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1.5fr;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.445);
+  padding: 20px;
+  gap: 10px;
+}
+.content main .banner_2:hover img {
+  filter: grayscale(0%);
+}
+.content main .banner_2 img {
+  display: block;
+  grid-area: img;
+  height: 118%;
+  filter: grayscale(70%);
+  position: relative;
+  transition: 1s;
+}
+@media (max-width: 880px) {
+  .content main .banner_2 img {
+    height: 100%;
+    transition: filter 1s;
+  }
+}
+.content main .banner_2 h3 {
+  grid-area: h3;
+  line-height: 1.5;
+}
+.content main .banner_2 p {
+  grid-area: p;
+}
+.content main .banner_2 p.p_short {
+  display: none;
+}
+@media (max-width: 400px) {
+  .content main .banner_2 p {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+  .content main .banner_2 p.p_long {
+    display: none;
+  }
+  .content main .banner_2 p.p_short {
+    display: block;
+  }
+}
+@media (max-width: 880px) {
+  .content main .banner_2 {
+    grid-template-areas: "img h3" "img h3" "p p";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr auto;
+    gap: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .content main .banner_2 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.content main .swiper {
+  margin: 30px 0;
+  max-width: 100%;
+}
+.content main .swiper .swiper-slide {
+  width: 1000px;
+  height: 400px;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+}
+@media (max-width: 768px) {
+  .content main .swiper .swiper-slide {
+    transform: scale(80%);
+    margin: -20px 0;
+  }
+}
+.content main .swiper .slide_1 {
+  background: url("https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80");
+}
+.content main .swiper .slide_2 {
+  background: url("https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80");
+}
+.content main .swiper .slide_3 {
+  background: url("https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80");
+}/*# sourceMappingURL=index.css.map */

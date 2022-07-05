@@ -1,0 +1,180 @@
+/* css */
+.content {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+.content .banner {
+  max-width: 100%;
+  height: 400px;
+  background: repeating-linear-gradient(45deg, rgb(187, 255, 0), rgb(187, 255, 0) 10px, green 10px, green 20px);
+  background: url("https://images.unsplash.com/photo-1606568939863-43d6704c8713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80");
+  background-position: bottom;
+  background-position-y: 40%;
+}
+@media (max-width: 400px) {
+  .content .banner {
+    height: 200px;
+    background-position-y: 60%;
+    background-size: 100%;
+  }
+}
+.content main {
+  padding: 10px;
+}
+.content main .photo {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+.content main .photo a {
+  transition: ease-in-out 1s;
+}
+.content main .photo .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(var(--s, 1));
+  transition: ease 0.5s;
+}
+.content main .photo .card:hover {
+  --s:1.04;
+}
+.content main .photo .card.tall {
+  grid-row: span 2/auto;
+}
+.content main .photo .card.wide {
+  grid-column: span 2/auto;
+}
+.content main .photo .card h2 {
+  padding: 6%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 400px) {
+  .content main .photo .card.tall {
+    grid-row: span 1/auto;
+  }
+  .content main .photo .card.wide {
+    grid-column: span 1/auto;
+  }
+}
+.content main nav {
+  height: 50px;
+  position: relative;
+}
+.content main nav::before {
+  content: " ";
+  position: absolute;
+  border-top: 1px solid #000;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+}
+.content main .shop {
+  display: none;
+  gap: 10px;
+}
+.content main .shop.active {
+  display: flex;
+}
+.content main .shop .sidebar {
+  background: #d7ee9d;
+  margin-left: -10px;
+  flex: 13%;
+}
+.content main .shop .sidebar a {
+  display: block;
+  background: #aec378;
+  padding: 20px;
+  font-weight: bold;
+}
+.content main .shop .sidebar a.select {
+  filter: hue-rotate(30deg);
+}
+.content main .shop .sidebar a:hover {
+  filter: hue-rotate(30deg);
+}
+.content main .shop .sidebar a li {
+  width: 100%;
+  word-wrap: nowrap;
+}
+.content main .shop .right_item {
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px 0;
+  margin-left: 20px;
+}
+.content main .shop .right_item li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  box-shadow: 1px 1px 5px 1px lightgray;
+}
+.content main .shop .right_item li * {
+  margin-bottom: 10px;
+}
+.content main .shop .right_item li img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content main .shop .right_item li h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.content main .shop .right_item li h4 {
+  margin-top: -10px;
+}
+.content main .shop .right_item li p {
+  font-size: 22px;
+  font-weight: bold;
+}
+.content main .shop .right_item li button {
+  font-size: 18px;
+  background: #d7ee9d;
+  width: 80%;
+  padding: 5px;
+}
+.content main .shop .right_item li button::after {
+  content: "Cart";
+}
+.content main .shop .right_item li button:hover {
+  filter: hue-rotate(30deg);
+}
+.content main .shop .right_item li button.active {
+  filter: hue-rotate(50deg);
+  content: "In cart";
+}
+.content main .shop .right_item li button.active::after {
+  content: "In Cart";
+}
+.content main .shop .right_item li span {
+  font-style: italic;
+  font-size: 22px;
+  color: #12916f;
+}
+.content main .shop .main_food, .content main .shop .BBQ, .content main .shop .veg, .content main .shop .dessert, .content main .shop .chef_select {
+  display: none;
+}/*# sourceMappingURL=recipe.css.map */

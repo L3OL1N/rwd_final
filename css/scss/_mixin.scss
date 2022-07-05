@@ -1,0 +1,23 @@
+@mixin desk-m{
+    @media(max-width:880px){
+      @content;
+    }
+  }
+@mixin pad{
+  @media(max-width:768px){
+    @content;
+  }
+}
+@mixin mobile{
+  @media(max-width:400px){
+    @content;
+  }
+}
+$background-lightgreen:#d7ee9d;
+$background-darkgreen:#aec378;
+$background-lightblue: #88ced2;
+$background-green: #12916f;
+$color-orange:#f90;
+$color-greenblue:#00dfc4;
+$color-red:#df0000;
+$color-gray:rgba(255, 255, 255, 0.25);

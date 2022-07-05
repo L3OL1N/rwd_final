@@ -1,0 +1,39 @@
+
+$background-lightgreen:#d7ee9d;
+$background-darkgreen:#aec378;
+$background-lightblue: #88ced2;
+$background-green: #12916f;
+$orange:#f90;
+
+ /* toTopAorrw */
+
+.toTop-arrow {
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 33%;
+    position: relative;
+    &::before, &::after {
+        width: 25px;
+        height: 5px;
+        border-radius: 3px;
+        background: $background-darkgreen;
+        position: absolute;
+        content: " ";
+        bottom: 1.25rem;
+    }
+    &:hover::before, &:hover::after{
+        content: " ";
+        background: $orange;
+    }
+    &::before {
+        transform: rotate(-45deg) translate(0, -50%);
+        left: 0.4rem;
+    }
+    &::after {
+        transform: rotate(45deg) translate(0, -50%);
+        right: 0.4rem;
+    }
+}

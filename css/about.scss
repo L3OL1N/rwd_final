@@ -1,0 +1,172 @@
+@import 'scss/mixin';
+
+.content{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black;
+    .banner{
+        max-width: 100%;
+        height: 400px;
+        background: repeating-linear-gradient(45deg,#eeba15,#eeba15 10px,#0c42f3 10px,#0c42f3 20px);
+        background: url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+        background-position: bottom;
+        @include mobile{
+          height: 200px;
+          background-position-y: 70% ;
+          background-size: 180%;
+        }
+    }
+    main{
+        * {
+            box-sizing: border-box;
+        }
+        .timeline{
+            padding: 100px 0;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            background: #000;
+            &::before{
+                position: absolute;
+                content:" " ;
+                width: 12px;
+                height: 12px;
+                background: #FF9F55;
+                border-radius: 50%;
+                bottom: 2px;
+                left: 50%;
+                margin-left: -6px;
+                z-index: 2;
+            }
+            &::after{
+                position: absolute;
+                content:" " ;
+                width: 6px;
+                background: white;
+                top: 0;
+                bottom: 12px;
+                left: 50%;
+                margin-left: -3px;
+            }
+            .container {
+                padding: 10px 40px;
+                position: relative;
+                background-color: inherit;
+                width: 50%;
+                margin-bottom: 10px;
+                &::after{
+                  content: ' ';
+                  position: absolute;
+                  width: 16px;
+                  height: 16px;
+                  right: -12px;
+                  background-color: white;
+                  border: 4px solid #FF9F55;
+                  top: 27px;
+                  border-radius: 50%;
+                  z-index: 1;
+                }
+            }
+            .left {
+                left: 0;
+                .box{
+                  &::before{
+                    content: " ";
+                    height: 0;
+                    position: absolute;
+                    top: 22px;
+                    width: 0;
+                    z-index: 1;
+                    right: -10px;
+                    border: medium solid white;
+                    border-width: 10px 0 10px 10px;
+                    border-color: transparent transparent transparent white;
+                  }
+                }
+              }
+            .right {
+                left: 50%;
+                &::after{
+                  left: -12px;
+                }
+                .box{
+                  &::before{
+                    content: " ";
+                    height: 0;
+                    position: absolute;
+                    top: 22px;
+                    width: 0;
+                    z-index: 1;
+                    left: -20px;
+                    border: medium solid white;
+                    border-width: 10px 10px 10px 10px;
+                    border-color: transparent white transparent transparent;
+                  }
+                }
+              }  
+              .box {
+                padding: 20px 30px;
+                background-color: white;
+                position: relative;
+                border-radius: 6px;
+                line-height: 1.5;
+                transition: ease 1s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                h2{
+                    font-size: 32px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                  }
+                p{
+                    font-size: 22px;
+                }
+            }
+            .animate{
+              opacity: 0;
+              transition: 1s;
+              
+            }
+            .fadeIn{
+              opacity: 1;
+            }
+          }
+        
+        @include mobile  {
+          .timeline{
+            &::before{
+              left: 95%;
+            }
+            &::after{
+                left: 95%;
+              }
+            .container {
+              width: 95%;
+              padding-left: 40px;
+              padding-right: 25px;
+              margin-bottom: 20px;
+              &::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+              }
+            }
+            .right {
+                left: 0%;
+                .box::before{
+                  left: 100%;
+                  border: medium solid white;
+                  border-width: 10px 0 10px 10px;
+                  border-color: transparent transparent transparent white;
+                }
+                &::after{
+                  top: 30px;
+                  left: 96.5%;
+                }
+              }
+          }  
+        }
+    }
+}

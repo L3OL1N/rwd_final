@@ -1,0 +1,242 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* css resst End */
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d7ee9d;
+  padding: 20px 10px 0 10px;
+}
+header ul {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-template-rows: 0.3fr 1fr;
+  justify-content: space-around;
+  align-content: space-between;
+  gap: 10px;
+}
+header ul a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  grid-row: 2/3;
+  padding: 10px;
+  margin-top: 10px;
+  background: white;
+  border: 1px solid black;
+  border-bottom: transparent;
+  text-align: center;
+  color: #000;
+  background: white;
+  font-weight: bold;
+}
+header ul a:hover {
+  grid-row: 1/3;
+}
+header ul a:hover ::before {
+  content: " ";
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  width: 100%;
+  height: 4px;
+  background: #aec378;
+  border: 1px solid #aec378;
+}
+header ul a.active {
+  position: relative;
+  grid-row: 1/3;
+}
+header ul a.active ::before {
+  content: " ";
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  width: 100%;
+  height: 4px;
+  background: red;
+  border: 1px solid red;
+}
+header .login {
+  grid-template-columns: 1fr 1fr;
+}
+header .hamburger {
+  display: none;
+}
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+    position: relative;
+  }
+  header .hamburger {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+  }
+  header ul {
+    display: block;
+    max-width: 0px;
+    position: absolute;
+    overflow: hidden;
+    top: 81px;
+    right: 10px;
+    transition: max-width 3s;
+    z-index: 4;
+  }
+  header ul.menu {
+    right: 20px;
+  }
+  header ul li {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  header .show {
+    max-width: 100%;
+    right: 10px;
+  }
+  header .login {
+    display: flex;
+    top: 290px;
+  }
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d7ee9d;
+  padding: 5px;
+}
+footer a {
+  display: block;
+  width: 40%;
+}
+@media (max-width: 400px) {
+  footer .toTop-arrow {
+    margin-right: 40%;
+  }
+}
+footer ul {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+@media (max-width: 400px) {
+  footer ul {
+    display: none;
+  }
+}
+footer ul a {
+  display: block;
+}
+footer ul a li:hover {
+  color: #f90;
+}
+footer ul a li {
+  padding: 10px 0;
+  font-weight: bold;
+  color: #aec378;
+}
+
+/* toTopAorrw */
+.toTop-arrow {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 33%;
+  position: relative;
+}
+.toTop-arrow::before, .toTop-arrow::after {
+  width: 25px;
+  height: 5px;
+  border-radius: 3px;
+  background: #aec378;
+  position: absolute;
+  content: " ";
+  bottom: 1.25rem;
+}
+.toTop-arrow:hover::before, .toTop-arrow:hover::after {
+  content: " ";
+  background: #f90;
+}
+.toTop-arrow::before {
+  transform: rotate(-45deg) translate(0, -50%);
+  left: 0.4rem;
+}
+.toTop-arrow::after {
+  transform: rotate(45deg) translate(0, -50%);
+  right: 0.4rem;
+}/*# sourceMappingURL=style.css.map */
