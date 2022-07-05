@@ -10,7 +10,7 @@
   background: url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
   background-position: bottom;
 }
-@media (max-width: 400px) {
+@media (max-width: 421px) {
   .content .banner {
     height: 200px;
     background-position-y: 70%;
@@ -127,7 +127,7 @@
 .content main .timeline .fadeIn {
   opacity: 1;
 }
-@media (max-width: 400px) {
+@media (max-width: 421px) {
   .content main .timeline::before {
     left: 95%;
   }

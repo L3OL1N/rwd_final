@@ -12,7 +12,7 @@
   background-position: bottom;
   background-position-y: 40%;
 }
-@media (max-width: 400px) {
+@media (max-width: 421px) {
   .content .banner {
     height: 200px;
     background-position-y: 60%;
@@ -65,7 +65,7 @@
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
 }
-@media (max-width: 400px) {
+@media (max-width: 421px) {
   .content main .photo .card.tall {
     grid-row: span 1/auto;
   }
