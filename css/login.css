@@ -35,6 +35,7 @@
   outline: none;
   color: #fff;
   font-size: 1em;
+  text-indent: 1.5em;
   transition: 0.5s;
 }
 .content form .input_box input:focus:invalid {
@@ -82,6 +83,12 @@
   color: #1d2b3a;
   border-radius: 2px;
 }
+.content form .input_box i {
+  position: absolute;
+  color: #fff;
+  top: 16px;
+  left: 1em;
+}
 .content form a {
   width: 250px;
   color: #df0000;
@@ -113,6 +120,7 @@
   outline: none;
   padding: 10px;
   border-radius: 2px;
+  cursor: pointer;
 }
 .content form .box input[type=submit]:hover {
   filter: hue-rotate(30deg);

@@ -8,6 +8,11 @@
     @content;
   }
 }
+@mixin desk-min{
+    @media(max-width:670px){
+        @content;
+  }
+}
 @mixin mobile{
   @media(max-width:421px){
     @content;

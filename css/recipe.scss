@@ -63,12 +63,22 @@
                     
                 }
              }
+             @media(max-width:790px){
+                .card{
+                    &.dessert{
+                        grid-column: span 2 / auto;
+                    }
+                }
+              }
             @include mobile{
                 .card{
                     &.tall{
                         grid-row: span 1 / auto;
                     }
                     &.wide{
+                        grid-column: span 1 / auto;
+                    }
+                    &.dessert{
                         grid-column: span 1 / auto;
                     }
                 }
@@ -155,6 +165,7 @@
                         background: $background-lightgreen;
                         width: 80%;
                         padding: 5px;
+                        position: relative;
                         &::after{
                             content: "Cart";
                         }
@@ -168,12 +179,25 @@
                                 content: "In Cart";
 
                             }
+                            i{
+                                display: none;
+                            }
+                        }
+                        i{
+                            position: absolute;
+                            left: 54px;
                         }
                     }
                     span{
                         font-style: italic;
                         font-size: 22px;
                         color: $background-green;
+                    }
+                }
+                @media(max-width:640px){
+                    li{
+                        width: 80%;
+                        margin: 0 auto;
                     }
                 }
             }

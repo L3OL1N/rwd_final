@@ -35,6 +35,7 @@ $width:250px;
                 outline: none;
                 color: #fff;
                 font-size: 1em;
+                text-indent: 1.5em;
                 transition: 0.5s;
                 &:focus:invalid{
                     border: 1px solid $color-red;
@@ -78,7 +79,12 @@ $width:250px;
                     border-radius: 2px;
                 }
             }
-            
+            i{
+                position: absolute;
+                color: #fff;
+                top: 16px;
+                left: 1em;
+            }
         }
         a{
             width: 250px;
@@ -111,10 +117,12 @@ $width:250px;
                 outline: none;
                 padding: 10px;
                 border-radius: 2px;
+                cursor: pointer;
                 &:hover{
                     filter: hue-rotate(30deg);
                 }
             }
+            
         }
     }
 }
