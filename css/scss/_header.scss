@@ -61,8 +61,7 @@ header{
         }
     }
     .login{
-        grid-template-columns: 1fr 1fr;
-        
+        grid-template-columns: 1fr 1fr;        
     }
     .hamburger{
         display: none;
@@ -87,12 +86,10 @@ header{
             z-index: 4;
             &.menu{
                 right:20px;
-                
             }
             li{
                 white-space:nowrap;
                 overflow: hidden;
-
             }
         }
         .show{

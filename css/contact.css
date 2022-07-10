@@ -101,7 +101,6 @@
 }
 .content .form input:focus {
   color: black;
-  font-size: 17px;
 }
 .content .form .button {
   height: 33px;
